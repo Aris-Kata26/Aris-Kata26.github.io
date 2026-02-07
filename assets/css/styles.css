@@ -648,6 +648,62 @@ button:focus-visible,
   column-gap: 4.5rem;
 }
 
+/*=============== SCROLL REVEAL ANIMATIONS ===============*/
+:root {
+  --reveal-duration: 0.75s;
+  --reveal-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  filter: blur(4px);
+  transition: opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease),
+    filter var(--reveal-duration) var(--reveal-ease);
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-ready .reveal.reveal--left {
+  transform: translate3d(-16px, 0, 0);
+}
+
+.reveal-ready .reveal.reveal--right {
+  transform: translate3d(16px, 0, 0);
+}
+
+.reveal-ready .reveal.reveal--scale {
+  transform: scale(0.96);
+}
+
+.reveal-ready .reveal.reveal--instant,
+.reveal-ready .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+.reveal-ready .reveal.reveal--instant {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .reveal,
+  .reveal-ready .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
 /* CV dropdown */
 .btn-dropdown {
   position: relative;
@@ -813,6 +869,12 @@ button:focus-visible,
 
 .skills-value b {
   color: var(--first-color);
+}
+
+#skills .skills-percent-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
 }
 
 .skills-description {
@@ -1007,6 +1069,58 @@ button:focus-visible,
   box-shadow: 4px 4px var(--shadow-color);
 }
 
+.project-page .card.project-details-card {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-page .project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-page .project-section-title {
+  font-size: var(--h3-font-size);
+  margin: 0;
+  color: var(--title-color);
+}
+
+.project-page .project-text {
+  margin: 0;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.project-page .project-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-color);
+}
+
+.project-page .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+}
+
+.project-page .project-links .link,
+.project-page .project-links .btn {
+  margin: 0;
+}
+
+.project-page .work-description {
+  min-height: 0;
+}
+
 /*=============== RESUME ===============*/
 .resume-container {
   grid-template-columns: repeat(2, 1fr);
@@ -1116,6 +1230,13 @@ button:focus-visible,
 .testimonial-name {
   font-size: var(--larger-font-size);
   margin-block: 2rem 0.25rem;
+}
+
+/* Tutor photo: show full image (no crop) */
+#testimonials img.testimonial-photo--contain {
+  object-fit: contain !important;
+  object-position: center;
+  background: var(--container-color);
 }
 
 #testimonials .swiper-slide.card {
@@ -1256,6 +1377,27 @@ button:focus-visible,
 
 #testimonials .testimonial-name {
   margin-block: 1.25rem 0.25rem;
+}
+
+/* ===== HERO LOAD ANIMATION (SAFE, NO LAYOUT CHANGES) ===== */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.page-loaded .hero-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media screen and (max-width: 576px) {
