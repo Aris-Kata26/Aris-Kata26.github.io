@@ -113,32 +113,73 @@
           <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
           <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
           <a href="../index.html#works" class="btn">← Back to Projects</a>
-          <div class="card">
-            <h3 class="work-title">Overview</h3>
-            <p class="work-description"><b>Problem:</b> Need resilient, cost-aware storage across AWS, Azure, and GCP to support demos and labs without vendor lock-in.</p>
-            <p class="work-description"><b>Goal:</b> Build a free-tier prototype that synchronizes data, enforces access control, and monitors usage and costs across clouds.</p>
+          <div class="card project-details-card">
+            <div class="project-section">
+              <h3 class="project-section-title">Overview</h3>
+              <p class="project-text">This capstone prototype compares how AWS, Azure, and GCP handle object storage, cost controls, and permissions when you try to keep data portable.</p>
+            </div>
 
-            <h3 class="work-title">Architecture</h3>
-            <p class="work-description">Buckets/containers in each cloud with replication/sync, central identity controls, and monitoring/alerts.</p>
-            <img src="../assets/img/projects/multi-cloud-storage.png" alt="Architecture diagram for Multi-Cloud Storage" class="work-img project-arch" />
+            <div class="project-section">
+              <h3 class="project-section-title">Problem</h3>
+              <p class="project-text">Labs kept locking us into one cloud, so it was hard to talk about multi-cloud strategy with evidence. I needed a practical demo that showed trade-offs, not slideware.</p>
+            </div>
 
-            <h3 class="work-title">Tech Stack</h3>
-            <p class="work-description">
-              <b>Clouds:</b> AWS, Azure, GCP<br />
-              <b>Storage primitives:</b> S3, Blob Storage, Cloud Storage<br />
-              <b>IaC/Tools:</b> Terraform (planned), CLI/SDKs, cost monitoring
-            </p>
+            <div class="project-section">
+              <h3 class="project-section-title">Goal</h3>
+              <p class="project-text">Design a free-tier friendly architecture that synchronizes objects across the big three clouds, enforces least-privilege access, and records cost/performance metrics.</p>
+            </div>
 
-            <h3 class="work-title">Key Features</h3>
-            <p class="work-description">• Cross-cloud storage with demo scenarios<br />• Cost control alerts and usage tracking<br />• Basic sync/replication patterns<br />• Governance and least-privilege access</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I built</h3>
+              <ul class="project-list">
+                <li>Architecture diagrams + a 25-page technical report documenting each cloud’s behavior.</li>
+                <li>Scripts + runbooks for provisioning buckets/containers and configuring replication/sync jobs.</li>
+                <li>IAM policy snippets for AWS, Azure, and GCP that map to the same RBAC model.</li>
+                <li>Cost tracker spreadsheet + Grafana-style dashboards (screenshots) to explain spend.</li>
+              </ul>
+            </div>
 
-            <h3 class="work-title">Validation / Testing</h3>
-            <p class="work-description">Upload/read checks across providers, failover scenarios, monitoring signals, and cost observation during demos.</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I learned</h3>
+              <p class="project-text">Documentation matters: the technical report became the real deliverable because it captures why some providers make lifecycle rules easy and others hide them behind APIs.</p>
+            </div>
 
-            <h3 class="work-title">Links</h3>
-            <a href="https://github.com/Aris-Kata26/Multi-Cloud-Storage" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../assets/pdf/reports/multi-cloud-technical-report.pdf" target="_blank" rel="noopener noreferrer" class="link">Technical Report (PDF) <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../index.html#works" class="btn">← Back to Projects</a>
+            <div class="project-section">
+              <h3 class="project-section-title">Architecture</h3>
+              <p class="project-text">Each provider hosts a primary bucket/container with event-driven sync to the others, centralized identity via least-privilege roles, and shared monitoring hooks for spend + health.</p>
+              <img src="../assets/img/projects/multi-cloud-storage.png" alt="Architecture diagram for Multi-Cloud Storage" class="project-arch" />
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Tech Stack</h3>
+              <p class="project-text"><b>Clouds:</b> AWS S3, Azure Blob Storage, Google Cloud Storage
+                <br /><b>Tooling:</b> CLI/SDK scripts, Terraform modules (in progress), Cost Explorer + Azure Cost Management
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Key Features</h3>
+              <ul class="project-list">
+                <li>Cross-cloud sync policies with documented limitations (eventual consistency, object limits).</li>
+                <li>Governance baseline (naming, tagging, encryption defaults) shared across providers.</li>
+                <li>Monitoring hooks for storage growth + alert thresholds per provider.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Validation / Testing</h3>
+              <p class="project-text">I run upload/read/delete tests across each cloud, measure replication delays, simulate failover by disabling one provider, and log spend deltas inside the report.
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Links</h3>
+              <div class="project-links">
+                <a href="https://github.com/Aris-Kata26/Multi-Cloud-Storage" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../assets/pdf/reports/multi-cloud-technical-report.pdf" target="_blank" rel="noopener noreferrer" class="link">Technical Report (PDF) <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../index.html#works" class="btn">← Back to Projects</a>
+              </div>
+            </div>
           </div>
 
         </div>

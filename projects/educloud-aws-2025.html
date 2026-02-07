@@ -104,27 +104,71 @@
           <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
           <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
           <a href="../index.html#works" class="btn">← Back to Projects</a>
-          <div class="card">
-            <h3 class="work-title">Overview</h3>
-            <p class="work-description"><b>Problem:</b> Automate student VM provisioning and basic services for classroom labs.</p>
-            <p class="work-description"><b>Goal:</b> Deploy minimal infrastructure with cost awareness and managed workflows.</p>
+          <div class="card project-details-card">
+            <div class="project-section">
+              <h3 class="project-section-title">Overview</h3>
+              <p class="project-text">EduCloud is a practice architecture I built to provision classroom lab resources on AWS with cost guardrails and automated notifications.</p>
+            </div>
 
-            <h3 class="work-title">Architecture</h3>
-            <p class="work-description">Core AWS services (EC2, S3, RDS, Lambda, SES) orchestrated with IAM and monitoring.</p>
-            <img src="../assets/img/projects/educloud-aws.png" alt="Architecture diagram for EduCloud AWS 2025" class="work-img project-arch" />
+            <div class="project-section">
+              <h3 class="project-section-title">Problem</h3>
+              <p class="project-text">Teachers needed a repeatable way to spin up student VMs, email credentials, and clean up the environment afterwards—all within a strict budget.</p>
+            </div>
 
-            <h3 class="work-title">Tech Stack</h3>
-            <p class="work-description"><b>AWS:</b> EC2, S3, RDS, Lambda, SES, IAM<br /><b>Tools:</b> CLI/SDKs, scripts, dashboards</p>
+            <div class="project-section">
+              <h3 class="project-section-title">Goal</h3>
+              <p class="project-text">Prototype a low-cost stack that provisions lab compute/storage, routes student traffic through IAM policies, and sends SES notifications when quotas are hit.</p>
+            </div>
 
-            <h3 class="work-title">Key Features</h3>
-            <p class="work-description">• Automated provisioning<br />• Email workflows<br />• Database setup<br />• Cost controls</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I built</h3>
+              <ul class="project-list">
+                <li>Reference architecture diagrams + README describing each AWS service and cost trade-off.</li>
+                <li>CLI/CloudShell scripts to create EC2 templates, RDS lab databases, and shared S3 buckets.</li>
+                <li>SES templates for onboarding emails and Lambda cleanup jobs to stop idle instances.</li>
+                <li>Budget alerts with tagged resources so tutors can see who owns each spend.</li>
+              </ul>
+            </div>
 
-            <h3 class="work-title">Validation / Testing</h3>
-            <p class="work-description">Provisioning verifications, integration checks, and cost monitoring.</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I learned</h3>
+              <p class="project-text">Lab governance is mostly tagging and cleanup: without automation, the free-tier melts fast, so every diagram now includes deletion workflows.</p>
+            </div>
 
-            <h3 class="work-title">Links</h3>
-            <a href="https://github.com/Aris-Kata26/EduCloud-AWS-2025" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../index.html#works" class="btn">← Back to Projects</a>
+            <div class="project-section">
+              <h3 class="project-section-title">Architecture</h3>
+              <p class="project-text">EC2 jump boxes feed students into VPC subnets, S3/RDS store shared material, Lambda handles housekeeping, and SES/CloudWatch tie the notifications together.</p>
+              <img src="../assets/img/projects/educloud-aws.png" alt="Architecture diagram for EduCloud AWS 2025" class="project-arch" />
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Tech Stack</h3>
+              <p class="project-text"><b>AWS Services:</b> EC2, S3, RDS, Lambda, SES, IAM, CloudWatch Budgets
+                <br /><b>Tooling:</b> AWS CLI, CloudShell scripts, draw.io diagrams
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Key Features</h3>
+              <ul class="project-list">
+                <li>Parameter-driven provisioning scripts for student cohorts.</li>
+                <li>Automated email notifications with unique login instructions.</li>
+                <li>Scheduled cleanup + tagging compliance to keep the environment affordable.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Validation / Testing</h3>
+              <p class="project-text">Test runs include provisioning a small cohort, verifying IAM permissions, firing cost alerts by simulating spend, and confirming Lambda cleanup removes unused EC2/S3 assets.</p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Links</h3>
+              <div class="project-links">
+                <a href="https://github.com/Aris-Kata26/EduCloud-AWS-2025" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../index.html#works" class="btn">← Back to Projects</a>
+              </div>
+            </div>
           </div>
 
         </div>

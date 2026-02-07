@@ -104,27 +104,71 @@
           <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
           <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
           <a href="../index.html#works" class="btn">← Back to Projects</a>
-          <div class="card">
-            <h3 class="work-title">Overview</h3>
-            <p class="work-description"><b>Problem:</b> On-prem + cloud storage integration with resiliency and performance.</p>
-            <p class="work-description"><b>Goal:</b> Provide a professional hybrid solution with MinIO on-prem and Azure Blob primary.</p>
+          <div class="card project-details-card">
+            <div class="project-section">
+              <h3 class="project-section-title">Overview</h3>
+              <p class="project-text">I set up a hybrid storage lab that mirrors MinIO buckets running on-prem to Azure Blob so we can demo resilience without enterprise appliances.</p>
+            </div>
 
-            <h3 class="work-title">Architecture</h3>
-            <p class="work-description">MinIO on-prem configured to mirror to Azure Blob; access control and monitoring.</p>
-            <img src="../assets/img/projects/hybrid_cloud_storage.png" alt="Architecture diagram for Hybrid Storage Lab" class="work-img project-arch" />
+            <div class="project-section">
+              <h3 class="project-section-title">Problem</h3>
+              <p class="project-text">School labs rely on USB drives or single NAS devices—when a disk fails, we lose class work. We needed something we could run locally but still push to cloud for backups.</p>
+            </div>
 
-            <h3 class="work-title">Tech Stack</h3>
-            <p class="work-description"><b>Storage:</b> MinIO, Azure Blob<br /><b>Tools:</b> CLI/SDKs, lifecycle rules, monitoring</p>
+            <div class="project-section">
+              <h3 class="project-section-title">Goal</h3>
+              <p class="project-text">Demonstrate a repeatable pattern where on-prem MinIO handles fast writes while Azure Blob stores an off-site copy with lifecycle policies.</p>
+            </div>
 
-            <h3 class="work-title">Key Features</h3>
-            <p class="work-description">• Hybrid mirroring<br />• Access control<br />• Lifecycle management<br />• Monitoring</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I built</h3>
+              <ul class="project-list">
+                <li>MinIO cluster on lab hardware with buckets mapped to student projects.</li>
+                <li>Azure Storage account + scripts to sync object versions + enforce immutability.</li>
+                <li>Access policy matrix mapping tutor/admin/student permissions.</li>
+                <li>Monitoring sheet that logs replication lag, costs, and failure drills.</li>
+              </ul>
+            </div>
 
-            <h3 class="work-title">Validation / Testing</h3>
-            <p class="work-description">Upload/read consistency, mirror verification, and cost/performance observation.</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I learned</h3>
+              <p class="project-text">Calling something “hybrid” is easy until you monitor egress—documenting copy frequency + deletion rules became the biggest win of this lab.</p>
+            </div>
 
-            <h3 class="work-title">Links</h3>
-            <a href="https://github.com/Aris-Kata26/hybrid-storage-lab" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../index.html#works" class="btn">← Back to Projects</a>
+            <div class="project-section">
+              <h3 class="project-section-title">Architecture</h3>
+              <p class="project-text">MinIO buckets replicate to Azure Blob via client-side sync jobs, with RBAC enforced locally and via Azure AD/Shared Access Signatures for cloud reads.</p>
+              <img src="../assets/img/projects/hybrid_cloud_storage.png" alt="Architecture diagram for Hybrid Storage Lab" class="project-arch" />
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Tech Stack</h3>
+              <p class="project-text"><b>Storage:</b> MinIO (self-hosted), Azure Blob Storage
+                <br /><b>Tools:</b> rclone/azcopy, monitoring scripts, draw.io diagrams
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Key Features</h3>
+              <ul class="project-list">
+                <li>Bucket policies splitting read-only classroom access from admin writes.</li>
+                <li>Lifecycle rules in Azure to tier older backups to Cool storage.</li>
+                <li>Failover drill checklist showing how to promote Azure copy back to on-prem.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Validation / Testing</h3>
+              <p class="project-text">I script uploads/reads across both ends, delete files to test versioning, and capture replication timestamps + Azure invoices to prove the pattern stays affordable.</p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Links</h3>
+              <div class="project-links">
+                <a href="https://github.com/Aris-Kata26/hybrid-storage-lab" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../index.html#works" class="btn">← Back to Projects</a>
+              </div>
+            </div>
           </div>
 
         </div>

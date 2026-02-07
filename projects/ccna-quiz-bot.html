@@ -71,27 +71,71 @@
           <img src="../assets/img/shape-1.png" alt="" class="shape shape-1" />
           <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
           <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
-          <div class="card">
-            <h3 class="work-title">Overview</h3>
-            <p class="work-description">A Python-based bot to quiz CCNA topics, track scores, and provide feedback.</p>
+          <div class="card project-details-card">
+            <div class="project-section">
+              <h3 class="project-section-title">Overview</h3>
+              <p class="project-text">I built a CCNA quiz bot so I could drill subnets, STP, and security topics without relying on commercial exam engines.</p>
+            </div>
 
-            <h3 class="work-title">Architecture</h3>
-            <p class="work-description">Question source, quiz engine, scoring and reporting modules.</p>
-            <img src="../assets/img/projects/CCNA-Quiz-Bot.png" alt="Architecture diagram for CCNA Quiz Bot" class="work-img project-arch" />
+            <div class="project-section">
+              <h3 class="project-section-title">Problem</h3>
+              <p class="project-text">Our class only had short lab blocks, and printed worksheets didn’t give instant feedback. I needed a low-cost way to quiz myself offline and see which domains kept failing.</p>
+            </div>
 
-            <h3 class="work-title">Tech Stack</h3>
-            <p class="work-description"><b>Language:</b> Python<br /><b>Libraries:</b> CLI/GUI depending on version</p>
+            <div class="project-section">
+              <h3 class="project-section-title">Goal</h3>
+              <p class="project-text">Deliver a script that loads custom CCNA question banks, tracks per-topic accuracy, and exports results I can share with my tutor.</p>
+            </div>
 
-            <h3 class="work-title">Key Features</h3>
-            <p class="work-description">• Subject-focused questions<br />• Scoring with summaries<br />• Review mode</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I built</h3>
+              <ul class="project-list">
+                <li>Question parser that ingests CSV/JSON pools and tags each item by CCNA domain.</li>
+                <li>CLI quiz loop with timers, hints, and explanations after each answer.</li>
+                <li>Score tracker that summarizes accuracy per topic + saves attempts to disk.</li>
+                <li>Optional export to Markdown so I can drop results into tutor reports.</li>
+              </ul>
+            </div>
 
-            <h3 class="work-title">Validation / Testing</h3>
-            <p class="work-description">Unit-style checks for question parsing and scoring correctness.</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I learned</h3>
+              <p class="project-text">Automating study logs showed me how often I misread multiple-choice timers; throttling question difficulty is as important as memorizing commands.</p>
+            </div>
 
-            <h3 class="work-title">Links</h3>
-            <a href="https://github.com/Aris-Kata26/CCNA_Quiz_Bot" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../index.html#works" class="link"><i class="ri-arrow-left-line"></i> Back to Portfolio</a>
-            <a href="../index.html#works" class="btn">← Back to Projects</a>
+            <div class="project-section">
+              <h3 class="project-section-title">Architecture</h3>
+              <p class="project-text">The bot is split into question sources, quiz engine, scoring/reporting, and optional GUI hooks. Everything runs locally so I can study without internet.</p>
+              <img src="../assets/img/projects/CCNA-Quiz-Bot.png" alt="Architecture diagram for CCNA Quiz Bot" class="project-arch" />
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Tech Stack</h3>
+              <p class="project-text"><b>Language:</b> Python 3
+                <br /><b>Libraries:</b> standard library (csv/json, datetime), optional Tkinter front end
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Key Features</h3>
+              <ul class="project-list">
+                <li>Themes of questions grouped by VLANs, routing, WLAN, security, etc.</li>
+                <li>Review mode that replays missed questions until I pass twice.</li>
+                <li>Score summaries with timestamps so I can measure progress week to week.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Validation / Testing</h3>
+              <p class="project-text">Unit-style checks verify parsing, scoring math, and that review queues don’t repeat answered questions. I also cross-check random samples against Cisco official answers.</p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Links</h3>
+              <div class="project-links">
+                <a href="https://github.com/Aris-Kata26/CCNA_Quiz_Bot" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../index.html#works" class="btn">← Back to Projects</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

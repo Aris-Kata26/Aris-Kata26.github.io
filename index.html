@@ -135,16 +135,16 @@
     <!--=============== MAIN ===============-->
     <main class="main">
       <!--=============== HOME ===============-->
-      <section class="home section" id="home">
+      <section class="home section reveal reveal--instant" id="home">
         <div class="home-container container">
-          <div class="home-content">
+          <div class="home-content hero-animate">
             <h2 class="home-subtitle">Hello, <span>My name is</span></h2>
-            <h1 class="home-title"><span>Aristide</span> Katagaruka</h1>
-            <h3 class="home-job">Cloud Computing Student · AWS, Azure & GCP</h3>
+            <h1 class="home-title js-hero-title"><span>Aristide</span> Katagaruka</h1>
+            <h3 class="home-job js-hero-subtitle">Cloud Computing Student · AWS, Azure & GCP</h3>
 
             <div class="home-banner">
               <div class="home-img-wrapper">
-                <img src="assets/img/Profile.png" alt="Profile photo of Aristide Katagaruka" class="home-profile" />
+                <img src="assets/img/Profile.png" alt="Profile photo of Aristide Katagaruka" class="home-profile js-hero-photo" />
               </div>
 
               <div class="home-data home-data-one">
@@ -164,7 +164,7 @@
               <img src="assets/img/shape-3.png" alt="" class="shape shape-3" />
             </div>
 
-            <p class="home-description">“On my journey to become a Cloud Engineer, I see technology as more than code or servers—it’s a way to learn endlessly, work with great people, and turn ideas into impact.”</p>
+            <p class="home-description js-hero-quote">“On my journey to become a Cloud Engineer, I see technology as more than code or servers—it’s a way to learn endlessly, work with great people, and turn ideas into impact.”</p>
 
             <div class="home-socials social-links">
               <a href="https://www.linkedin.com/in/aristide-kata" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -176,7 +176,7 @@
               </a>
             </div>
 
-            <div class="home-btns">
+            <div class="home-btns js-hero-actions">
               <div class="btn-dropdown" id="cv-dropdown">
                 <button class="btn" id="cv-button" aria-haspopup="true" aria-expanded="false" aria-controls="cv-menu">Download CV</button>
                 <ul class="dropdown-menu" id="cv-menu" role="menu" aria-label="Download CV options" aria-labelledby="cv-button">
@@ -199,7 +199,7 @@
       
 
       <!--=============== ABOUT ME FLYER ===============-->
-      <section class="section" id="about">
+      <section class="section reveal" id="about">
         <h2 class="section-title" data-title="One Page Summary">About Me</h2>
 
         <div class="container grid about-grid">
@@ -362,64 +362,52 @@
       </section>
 
       <!--=============== SERVICES ===============-->
-      <section class="services section" id="services">
+      <section class="services section reveal" id="services">
         <h2 class="section-title" data-title="My Services">What I Do</h2>
 
         <div class="container">
           <div class="swiper services-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide card">
-                <h4 class="services-subtitle"> Cloud Architecture & Deployment</h4>
-
-                <h3 class="services-title">AWS & Azure</h3>
-                <p class="services-description">Implementing and deploying cloud-based solutions. Building, configuration and administration of virtual machines. 
-                  The building and setting up new DevOps tools and infrastructure. Provide best way to secure the IT infrastructure</p>
+                <h4 class="services-subtitle">Cloud Architecture & Deployment</h4>
+                <h3 class="services-title">AWS · Azure · GCP</h3>
+                <p class="services-description">I design and deploy cloud lab solutions and portfolio projects with clear architecture, clean documentation, and a focus on reliability (compute, storage, networking basics, IAM). I’m comfortable comparing AWS/Azure/GCP trade-offs instead of locking into one stack.</p>
                 <a href="#contact" class="link">Request an architecture session <i class="ri-arrow-right-line link-icon"></i></a>
               </div>
 
               <div class="swiper-slide card">
-                <h4 class="services-subtitle">Automation</h4>
-                <h3 class="services-title">Power Apps</h3>
-                <p class="services-description">Design, build and test complex automation processes that will interact with multiple third-party applications. 
-                  Identify and fix security vulnerabilities in open source code.</p>
+                <h4 class="services-subtitle">Workflow Automation</h4>
+                <h3 class="services-title">Power Automate · Power Apps</h3>
+                <p class="services-description">I prototype small internal workflow automations and explore integrations that reduce repetitive tasks. I’m still building more project-grade proof here, but I’m actively practicing and documenting what works.</p>
                 <a href="#contact" class="link">Plan a Power Apps build <i class="ri-arrow-right-line link-icon"></i></a>
               </div>
 
               <div class="swiper-slide card">
-                <h4 class="services-subtitle">Office 365</h4>
-                <h3 class="services-title">Word, Excel & Powerpoint</h3>
-                <p class="services-description">Transform the way you work with Office 365, the ultimate cloud-based productivity suite. 
-                  From seamless collaboration with Microsoft Teams to powerful tools like Word, Excel, and PowerPoint, Office 365 empowers your business to work smarter, anytime, anywhere. 
-                  Stay connected, streamline workflows, and boost efficiency with secure, always-updated applications designed to meet your needs. 
-                  Elevate your productivity with Office 365 – the future of work, today.</p>
-                <a href="#contact" class="link">Book a team training call <i class="ri-arrow-right-line link-icon"></i></a>
+                <h4 class="services-subtitle">Productivity & Documentation</h4>
+                <h3 class="services-title">MOS Word · Excel · PowerPoint</h3>
+                <p class="services-description">I produce structured reports, runbooks, and presentations with a professional standard. I’m certified (MOS) and I use these tools to document projects, summarize results, and present technical work clearly.</p>
+                <a href="#contact" class="link">Book a documentation session <i class="ri-arrow-right-line link-icon"></i></a>
               </div>
 
               <div class="swiper-slide card">
-                <h4 class="services-subtitle">Security & Compliance</h4>
-                <h3 class="services-title">AWS Security Hub (for AWS) / Microsoft Defender for Cloud (for Azure)</h3>
-                <p class="services-description">Implement best security practices (IAM, encryption, firewalls, Zero Trust).
-                  Ensure compliance with industry standards (ISO 27001, NIST, GDPR).
-                  Cloud monitoring and incident response with tools like AWS CloudWatch, Azure Security Cente</p>
+                <h4 class="services-subtitle">Security & Compliance Foundations</h4>
+                <h3 class="services-title">Hardening · IAM · Encryption</h3>
+                <p class="services-description">I apply security-first habits in projects: least privilege, encryption considerations, baseline hardening, and clear documentation. I reinforce this with compliance/security sessions (MAQIT) and by reflecting security choices in my technical reports.</p>
                 <a href="#contact" class="link">Schedule a security review <i class="ri-arrow-right-line link-icon"></i></a>
               </div>
 
               <div class="swiper-slide card">
-                <h4 class="services-subtitle">Cloud Cost Optimization</h4>
-                <h3 class="services-title">AWS Cost Explorer & Azure Cost Management</h3>
-                <p class="services-description">Analyze and reduce cloud spending with cost-effective strategies.
-                  Implement auto-scaling, reserved instances, and right-sizing techniques.
-                  Use tools like AWS Cost Explorer, Azure Cost Management, and FinOps practices.</p>
+                <h4 class="services-subtitle">Cloud Cost Awareness</h4>
+                <h3 class="services-title">Budgets · Alerts · Practical FinOps</h3>
+                <p class="services-description">I track and reduce unnecessary cloud spend in labs by designing within free-tier constraints, monitoring usage, and documenting cost trade-offs. I treat cost as part of architecture—not an afterthought.</p>
                 <a href="#contact" class="link">Start a cost audit <i class="ri-arrow-right-line link-icon"></i></a>
               </div>
 
               <div class="swiper-slide card">
-                <h4 class="services-subtitle">Migration & Modernization</h4>
-                <h3 class="services-title">Azure Migrate & Kubernetes (EKS, AKS, GKE)</h3>
-                <p class="services-description">Lift-and-shift or re-architecting applications for cloud-native environments.
-                  Database migration to managed cloud services (AWS RDS, Azure SQL, Google Cloud Spanner).
-                  Hybrid cloud and multi-cloud strategies for enterprise businesses.</p>
-                <a href="#contact" class="link">Scope a migration plan <i class="ri-arrow-right-line link-icon"></i></a>
+                <h4 class="services-subtitle">Hybrid & Multi-Cloud Prototyping</h4>
+                <h3 class="services-title">Storage · Lab Scenarios</h3>
+                <p class="services-description">I build prototypes that compare cloud services and behaviors across providers (especially storage), then document results, limits, and lessons learned. This is where I turn learning into something auditable for teachers.</p>
+                <a href="#contact" class="link">Review a prototype <i class="ri-arrow-right-line link-icon"></i></a>
               </div>
             </div>
 
@@ -433,16 +421,21 @@
       </section>
 
       <!--=============== SKILLS ===============-->
-      <section class="skills section" id="skills">
+      <section class="skills section reveal" id="skills">
         <h2 class="section-title" data-title="My Talent">Professional Skills</h2>
 
         <div class="skills-container container grid">
           <div class="skills-item">
             <div class="skills-header">
-              <h3 class="skills-name">AWS & Azure Fundamentals</h3>
-              <span class="skills-value">75 <b>%</b></span>
+              <h3 class="skills-name">Cloud Fundamentals & Lab Design</h3>
+              <span class="skills-value">
+                <span class="skills-percent-wrap">
+                  <span class="skills-number">75</span>
+                  <span class="skills-percent">%</span>
+                </span>
+              </span>
             </div>
-            <p class="skills-description">Compute, storage, IAM; AZ-900 modules and cloud basics.</p>
+            <p class="skills-description">I build AWS/Azure/GCP labs, diagram them, and document results (AZ-900 track + Multi-Cloud Storage evidence).</p>
             <div class="skills-bar">
               <span class="skills-percentage" style="width: 75%"></span>
             </div>
@@ -450,10 +443,15 @@
 
           <div class="skills-item">
             <div class="skills-header">
-              <h3 class="skills-name">Terraform (IaC)</h3>
-              <span class="skills-value">60 <b>%</b></span>
+              <h3 class="skills-name">Infrastructure as Code & Automation</h3>
+              <span class="skills-value">
+                <span class="skills-percent-wrap">
+                  <span class="skills-number">60</span>
+                  <span class="skills-percent">%</span>
+                </span>
+              </span>
             </div>
-            <p class="skills-description">Core workflow, modules, state, variables; getting started level.</p>
+            <p class="skills-description">Terraform + Ansible practice for labs; version-controlled states and playbooks teachers can review.</p>
             <div class="skills-bar">
               <span class="skills-percentage" style="width: 60%"></span>
             </div>
@@ -461,10 +459,15 @@
 
           <div class="skills-item">
             <div class="skills-header">
-              <h3 class="skills-name">Linux & Windows Administration</h3>
-              <span class="skills-value">80 <b>%</b></span>
+              <h3 class="skills-name">Systems Administration Practice</h3>
+              <span class="skills-value">
+                <span class="skills-percent-wrap">
+                  <span class="skills-number">80</span>
+                  <span class="skills-percent">%</span>
+                </span>
+              </span>
             </div>
-            <p class="skills-description">Users, services, networking, troubleshooting on Linux & Windows Server.</p>
+            <p class="skills-description">Daily Linux/Windows labs (users, services, storage) + MAQIT supervision reports for accountability.</p>
             <div class="skills-bar">
               <span class="skills-percentage" style="width: 80%"></span>
             </div>
@@ -472,10 +475,15 @@
 
           <div class="skills-item">
             <div class="skills-header">
-              <h3 class="skills-name">Docker & Containers</h3>
-              <span class="skills-value">70 <b>%</b></span>
+              <h3 class="skills-name">Containerization & Packaging</h3>
+              <span class="skills-value">
+                <span class="skills-percent-wrap">
+                  <span class="skills-number">70</span>
+                  <span class="skills-percent">%</span>
+                </span>
+              </span>
             </div>
-            <p class="skills-description">Images, containers, Compose; packaging and running services consistently.</p>
+            <p class="skills-description">Dockerfiles + Compose stacks for labs (DevOps Workshop + storage prototypes) with runbooks.</p>
             <div class="skills-bar">
               <span class="skills-percentage" style="width: 70%"></span>
             </div>
@@ -483,10 +491,15 @@
 
           <div class="skills-item">
             <div class="skills-header">
-              <h3 class="skills-name">Networking (CCNA)</h3>
-              <span class="skills-value">70 <b>%</b></span>
+              <h3 class="skills-name">Networking Practice (CCNA Track)</h3>
+              <span class="skills-value">
+                <span class="skills-percent-wrap">
+                  <span class="skills-number">70</span>
+                  <span class="skills-percent">%</span>
+                </span>
+              </span>
             </div>
-            <p class="skills-description">Switching/routing, VLANs, subnets, WLAN security; CCNA essentials.</p>
+            <p class="skills-description">Packet Tracer labs, CCNA quiz bot, and supervised lab reports covering VLANs, routing, WLAN security.</p>
             <div class="skills-bar">
               <span class="skills-percentage" style="width: 70%"></span>
             </div>
@@ -494,10 +507,15 @@
 
           <div class="skills-item">
             <div class="skills-header">
-              <h3 class="skills-name">DevOps & Automation</h3>
-              <span class="skills-value">65 <b>%</b></span>
+              <h3 class="skills-name">DevOps, Scripting & Workflow</h3>
+              <span class="skills-value">
+                <span class="skills-percent-wrap">
+                  <span class="skills-number">65</span>
+                  <span class="skills-percent">%</span>
+                </span>
+              </span>
             </div>
-            <p class="skills-description">Git/GitLab, Bash, PowerShell, Microsoft Power Automate.</p>
+            <p class="skills-description">Git/GitLab for version control, Bash/PowerShell for daily ops, and growing Power Automate workflows.</p>
             <div class="skills-bar">
               <span class="skills-percentage" style="width: 65%"></span>
             </div>
@@ -510,7 +528,7 @@
       </section>
 
       <!--=============== WORK ===============-->
-      <section class="work section" id="works">
+      <section class="work section reveal" id="works">
         <h2 class="section-title" data-title="My Cases">Portfolio</h2>
 
         <div class="container">
@@ -1077,7 +1095,7 @@
       </section>
       
       <!--=============== EXTERNAL EXPERTS ===============-->
-      <section class="section" id="experts">
+      <section class="section reveal" id="experts">
         <h2 class="section-title" data-title="EX-TEX &amp; Visits">External Experts &amp; Visits</h2>
         <p class="experts-subtitle">Workshops, talks, and site visits that strengthened my technical and professional perspective.</p>
 
@@ -1144,7 +1162,7 @@
       </section>
 
       <!--=============== REFLECTION / CONCLUSION ===============-->
-      <section class="section" id="reflection">
+      <section class="section reveal" id="reflection">
         <h2 class="section-title" data-title="Conclusion">Reflection</h2>
 
         <div class="container reflection-grid">
@@ -1255,7 +1273,7 @@
       </section>
 
       <!--=============== VIDEOS ===============-->
-      <section class="section" id="videos">
+      <section class="section reveal" id="videos">
         <h2 class="section-title" data-title="Media">Videos</h2>
 
         <div class="container videos-grid grid">
@@ -1279,7 +1297,7 @@
       </section>
 
       <!--=============== RESUME ===============-->
-      <section class="resume section" id="resume">
+      <section class="resume section reveal" id="resume">
         <h2 class="section-title" data-title="Resume">Resume</h2>
 
         <div class="resume-container container grid">
@@ -1428,7 +1446,7 @@
       </section>
 
       <!--=============== TESTIMONIALS ===============-->
-      <section class="testimonials section" id="testimonials">
+      <section class="testimonials section reveal" id="testimonials">
         <h2 class="section-title" data-title="Evidence">
           Feedback &amp; Validation
         </h2>
@@ -1504,7 +1522,7 @@
                   <i class="ri-file-list-3-line"></i>
                 </div>
 
-                <img src="assets/pdf/tutor-reports/img/Mr_Marc_SCHMIT.png" alt="Portrait of Marc Schmit" class="testimonial-portrait" loading="lazy" width="220" height="260" />
+                <img src="assets/pdf/tutor-reports/img/Mr_Marc_SCHMIT.png" alt="Portrait of Marc Schmit" class="testimonial-portrait testimonial-photo--contain" loading="lazy" width="220" height="260" />
 
                 <p class="testimonial-description">
                   Structured tutor debriefs capture strengths, weaknesses, and next-step actions after every semester so I can show documented growth—not marketing slides.
@@ -1594,7 +1612,7 @@
       </section>
 
       <!--=============== CONTACT ===============-->
-      <section class="contact section" id="contact">
+      <section class="contact section reveal" id="contact">
         <h2 class="section-title" data-title="Let's Talk About Ideas">
           Contact Me
         </h2>
@@ -1832,7 +1850,9 @@
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+
     <!--=============== JS ===============-->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

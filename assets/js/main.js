@@ -483,3 +483,190 @@ document.querySelectorAll('img.work-img').forEach((img) => {
     img.setAttribute('aria-hidden', 'true');
   });
 })();
+
+function applyRevealTargets() {
+  if (typeof document === 'undefined') return;
+
+  const root = document.documentElement;
+  if (!root.classList.contains('reveal-ready')) {
+    root.classList.add('reveal-ready');
+  }
+
+  const addReveal = (selector, options = {}) => {
+    const nodes = document.querySelectorAll(selector);
+    if (!nodes.length) return;
+
+    nodes.forEach((node, index) => {
+      node.classList.add('reveal');
+      if (options.variant) node.classList.add(options.variant);
+
+      if (options.stagger) {
+        const delay = Math.min(index * options.stagger, 600);
+        node.style.setProperty('--d', `${delay}ms`);
+      }
+    });
+  };
+
+  addReveal('.section-title', { stagger: 40 });
+  addReveal('.section-subtitle', { stagger: 30 });
+  addReveal('#about .card', { stagger: 90 });
+  addReveal('#services .card', { stagger: 90 });
+  addReveal('#skills .skills-item', { stagger: 80 });
+  addReveal('#works .work-item', { stagger: 60 });
+  addReveal('.work-container .card', { stagger: 70 });
+  addReveal('.experts-swiper .swiper-slide', { stagger: 90 });
+  addReveal('.testimonials-swiper .swiper-slide.card', { stagger: 90 });
+  addReveal('#reflection .card', { stagger: 70 });
+  addReveal('#videos .card', { stagger: 70 });
+  addReveal('.resume-item', { stagger: 70 });
+  addReveal('#contact .contact-card', { stagger: 60 });
+  addReveal('#contact .contact-form-div', { stagger: 60 });
+}
+
+function initScrollReveal() {
+  if (typeof document === 'undefined') return;
+
+  const elements = document.querySelectorAll('.reveal');
+  if (!elements.length) return;
+
+  const mediaQuery =
+    typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(prefers-reduced-motion: reduce)')
+      : null;
+
+  const showAll = () => elements.forEach((el) => el.classList.add('is-visible'));
+
+  if (mediaQuery && mediaQuery.matches) {
+    showAll();
+    return;
+  }
+
+  if (typeof IntersectionObserver === 'undefined') {
+    showAll();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: '0px 0px -10% 0px',
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+
+  if (mediaQuery) {
+    const handleChange = (event) => {
+      if (event.matches) {
+        showAll();
+        observer.disconnect();
+      }
+    };
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleChange);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(handleChange);
+    }
+  }
+}
+
+applyRevealTargets();
+initScrollReveal();
+
+(function heroAnimeIntro() {
+  if (typeof window === 'undefined') return;
+
+  const reduceMotion =
+    typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  if (typeof anime === 'undefined') return;
+
+  const title = document.querySelector('.js-hero-title');
+  const subtitle = document.querySelector('.js-hero-subtitle');
+  const quote = document.querySelector('.js-hero-quote');
+  const actions = document.querySelector('.js-hero-actions');
+  const photo = document.querySelector('.js-hero-photo');
+
+  if (!title) return;
+
+  const els = [title, subtitle, quote, actions, photo].filter(Boolean);
+  els.forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(10px)';
+  });
+
+  window.addEventListener(
+    'load',
+    () => {
+      anime
+        .timeline({ easing: 'easeOutCubic' })
+        .add({
+          targets: title,
+          opacity: [0, 1],
+          translateY: [10, 0],
+          duration: 700,
+        })
+        .add(
+          {
+            targets: subtitle,
+            opacity: [0, 1],
+            translateY: [10, 0],
+            duration: 500,
+          },
+          '-=350'
+        )
+        .add(
+          {
+            targets: quote,
+            opacity: [0, 1],
+            translateY: [10, 0],
+            duration: 500,
+          },
+          '-=300'
+        )
+        .add(
+          {
+            targets: actions,
+            opacity: [0, 1],
+            translateY: [10, 0],
+            duration: 500,
+          },
+          '-=300'
+        );
+
+      if (photo) {
+        anime({
+          targets: photo,
+          opacity: [0, 1],
+          translateY: [12, 0],
+          duration: 700,
+          easing: 'easeOutCubic',
+          delay: 150,
+        });
+      }
+
+      setTimeout(() => {
+        els.forEach((el) => {
+          el.style.opacity = '';
+          el.style.transform = '';
+        });
+      }, 1400);
+    },
+    { once: true }
+  );
+})();
+
+// ===== HERO LOAD ANIMATION FLAG =====
+window.addEventListener('load', () => {
+  document.documentElement.classList.add('page-loaded');
+});

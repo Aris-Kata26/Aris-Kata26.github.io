@@ -71,27 +71,71 @@
           <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
           <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
           <a href="../index.html#works" class="btn">← Back to Projects</a>
-          <div class="card">
-            <h3 class="work-title">Overview</h3>
-            <p class="work-description">A focused 3-day workshop covering infrastructure provisioning, CI/CD pipelines, and GitOps workflows.</p>
+          <div class="card project-details-card">
+            <div class="project-section">
+              <h3 class="project-section-title">Overview</h3>
+              <p class="project-text">I facilitated a student DevOps workshop that walked classmates from Git commits to automated deployments and GitOps-style change control.</p>
+            </div>
 
-            <h3 class="work-title">Architecture</h3>
-            <p class="work-description">Workshop labs include source control, CI/CD runners, deployment targets, and feedback mechanisms.</p>
-            <img src="../assets/img/projects/Devops_Workshop.png" alt="Architecture diagram for DevOps Workshop" class="work-img project-arch" />
+            <div class="project-section">
+              <h3 class="project-section-title">Problem</h3>
+              <p class="project-text">Many of us could write scripts but hadn’t connected CI/CD concepts end-to-end. We also lacked shared lab notes for when pipelines failed mid-demo.</p>
+            </div>
 
-            <h3 class="work-title">Tech Stack</h3>
-            <p class="work-description"><b>Tools:</b> Git, CI/CD runners, container registry, IaC basics</p>
+            <div class="project-section">
+              <h3 class="project-section-title">Goal</h3>
+              <p class="project-text">Build a hands-on workshop that produces a working pipeline, teaches Git branching discipline, and documents the exact steps so others can rerun it.</p>
+            </div>
 
-            <h3 class="work-title">Key Features</h3>
-            <p class="work-description">• Automated builds and tests<br />• Deployments via pipelines<br />• GitOps for environment updates</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I built</h3>
+              <ul class="project-list">
+                <li>Agenda + slides covering IaC basics, CI stages, and GitOps pull-request flow.</li>
+                <li>Sample app + pipeline YAML that compiles, tests, and packages a container.</li>
+                <li>GitHub repo with lab guides, troubleshooting steps, and post-workshop notes.</li>
+                <li>Retro board template so attendees captured blockers for the next run.</li>
+              </ul>
+            </div>
 
-            <h3 class="work-title">Validation / Testing</h3>
-            <p class="work-description">Pipeline runs for build/test, deployment verification, rollbacks, and artifact checks.</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I learned</h3>
+              <p class="project-text">Teaching forced me to simplify GitOps vocabulary; the most helpful artifact ended up being the rollback checklist, not the slides.</p>
+            </div>
 
-            <h3 class="work-title">Links</h3>
-            <a href="https://github.com/Aris-Kata26/devops-workshop" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../index.html#works" class="link"><i class="ri-arrow-left-line"></i> Back to Portfolio</a>
-            <a href="../index.html#works" class="btn">← Back to Projects</a>
+            <div class="project-section">
+              <h3 class="project-section-title">Architecture</h3>
+              <p class="project-text">Source code lives in GitHub, pipelines run in GitHub Actions (self-hosted runner during class), and deployments target a container host with feedback sent back through pull requests.</p>
+              <img src="../assets/img/projects/Devops_Workshop.png" alt="Architecture diagram for DevOps Workshop" class="project-arch" />
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Tech Stack</h3>
+              <p class="project-text"><b>Tools:</b> GitHub, GitHub Actions, Docker/Podman, IaC snippets (Terraform/Ansible samples)
+                <br /><b>Collaboration:</b> ClickUp task board + shared notes in repo
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Key Features</h3>
+              <ul class="project-list">
+                <li>End-to-end CI pipeline template with lint, unit test, and container build.</li>
+                <li>GitOps workflow: changes land via pull requests and auto-deploy after approval.</li>
+                <li>Ops runbook detailing secrets management, runner health, and rollback path.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Validation / Testing</h3>
+              <p class="project-text">Each workshop run executes the pipeline live. We capture logs, confirm deployments on the target host, and intentionally break steps to rehearse recovery.</p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Links</h3>
+              <div class="project-links">
+                <a href="https://github.com/Aris-Kata26/devops-workshop" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../index.html#works" class="btn">← Back to Projects</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

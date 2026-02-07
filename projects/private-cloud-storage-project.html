@@ -71,27 +71,71 @@
           <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
           <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
           <a href="../index.html#works" class="btn">← Back to Projects</a>
-          <div class="card">
-            <h3 class="work-title">Overview</h3>
-            <p class="work-description">Build a personal cloud storage solution with secure access and simple management.</p>
+          <div class="card project-details-card">
+            <div class="project-section">
+              <h3 class="project-section-title">Overview</h3>
+              <p class="project-text">This lab is my "home cloud"—a self-hosted storage service with MFA-protected access and offline backups.</p>
+            </div>
 
-            <h3 class="work-title">Architecture</h3>
-            <p class="work-description">Core storage service with user access controls, backups, and sync options.</p>
-            <img src="../assets/img/projects/Private-Cloud-Storage.png" alt="Architecture diagram for Private Cloud Storage Project" class="work-img project-arch" />
+            <div class="project-section">
+              <h3 class="project-section-title">Problem</h3>
+              <p class="project-text">Relying on consumer sync apps made it hard to prove my files were encrypted or backed up. I wanted a stack I fully controlled for coursework and internship artifacts.</p>
+            </div>
 
-            <h3 class="work-title">Tech Stack</h3>
-            <p class="work-description"><b>Components:</b> Storage server, web UI, authentication</p>
+            <div class="project-section">
+              <h3 class="project-section-title">Goal</h3>
+              <p class="project-text">Deploy a private storage portal with role-based access, encrypted backups, and documented runbooks teachers can audit.</p>
+            </div>
 
-            <h3 class="work-title">Key Features</h3>
-            <p class="work-description">• Secure storage access<br />• Upload/download<br />• Backup routines</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I built</h3>
+              <ul class="project-list">
+                <li>Storage server with web UI + API for uploads/downloads.</li>
+                <li>MFA-capable auth layer tied to user groups (admin, contributor, viewer).</li>
+                <li>Backup pipeline that snapshots data to an external disk + optional cloud bucket.</li>
+                <li>Monitoring sheet logging capacity, checksums, and restore tests.</li>
+              </ul>
+            </div>
 
-            <h3 class="work-title">Validation / Testing</h3>
-            <p class="work-description">Functional checks for file operations, auth flows, and backup integrity.</p>
+            <div class="project-section">
+              <h3 class="project-section-title">What I learned</h3>
+              <p class="project-text">Backups are useless until you rehearse restores; now every sprint I document one restore test so I know the hashes match.</p>
+            </div>
 
-            <h3 class="work-title">Links</h3>
-            <a href="https://github.com/Aris-Kata26/Private-Cloud-Storage-Project" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
-            <a href="../index.html#works" class="link"><i class="ri-arrow-left-line"></i> Back to Portfolio</a>
-            <a href="../index.html#works" class="btn">← Back to Projects</a>
+            <div class="project-section">
+              <h3 class="project-section-title">Architecture</h3>
+              <p class="project-text">Users authenticate through a web UI, interact with the storage service, and scheduled jobs sync encrypted copies to secondary storage for DR.</p>
+              <img src="../assets/img/projects/Private-Cloud-Storage.png" alt="Architecture diagram for Private Cloud Storage Project" class="project-arch" />
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Tech Stack</h3>
+              <p class="project-text"><b>Core:</b> Self-hosted storage server + web admin UI
+                <br /><b>Security:</b> TLS, MFA plugin, role-based access controls
+              </p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Key Features</h3>
+              <ul class="project-list">
+                <li>Per-user quotas + sharing controls for classmates.</li>
+                <li>Automated backups with checksum verification.</li>
+                <li>Audit log exports for tutor review.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Validation / Testing</h3>
+              <p class="project-text">Manual test matrix covers login, file CRUD, backup/restore, and permission boundaries. Hash comparisons confirm restores equal original uploads.</p>
+            </div>
+
+            <div class="project-section">
+              <h3 class="project-section-title">Links</h3>
+              <div class="project-links">
+                <a href="https://github.com/Aris-Kata26/Private-Cloud-Storage-Project" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+                <a href="../index.html#works" class="btn">← Back to Projects</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
