@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ParkEasy project details: smart parking marketplace with AI detection and cloud orchestration." />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Montserrat+Alternates:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../assets/img/Profile.png" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var root = document.documentElement;
+          if (saved === 'dark') root.classList.add('dark');
+          else root.classList.remove('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <title>Project Details · ParkEasy</title>
+  </head>
+  <body class="project-page">
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="../index.html#home" class="nav-logo">Katagaruka</a>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../index.html#services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="../index.html#works" class="nav-link">Works</a></li>
+            <li class="nav-item"><a href="../index.html#resume" class="nav-link">Resume</a></li>
+            <li class="nav-item"><a href="../index.html#testimonials" class="nav-link">Testimonials</a></li>
+            <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/aristide-kata" target="_blank" rel="noopener noreferrer" class="social-link"><i class="ri-linkedin-box-fill"></i></a>
+            <a href="https://github.com/Aris-Kata26" target="_blank" rel="noopener noreferrer" class="social-link"><i class="ri-github-fill"></i></a>
+          </div>
+          <div class="section-deco deco-left header-deco">
+            <img src="../assets/img/shape-1.png" alt="" class="shape" />
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <div class="nav-settings" id="switcher-toggle"><i class="ri-settings-3-line"></i></div>
+          <div class="nav-toggle" id="nav-toggle"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="work section" id="project-details">
+        <h2 class="section-title" data-title="Project Details">ParkEasy (CloPro1)</h2>
+        <div class="section-deco deco-left">
+          <img src="../assets/img/shape-1.png" alt="" class="shape" />
+        </div>
+        <div class="section-deco deco-right">
+          <img src="../assets/img/shape-1.png" alt="" class="shape" />
+        </div>
+        <div class="container">
+          <img src="../assets/img/shape-1.png" alt="" class="shape shape-1" />
+          <img src="../assets/img/shape-2.png" alt="" class="shape shape-2" />
+          <img src="../assets/img/shape-3.png" alt="" class="shape shape-3" />
+          <a href="../index.html#works" class="btn">← Back to Projects</a>
+          <div class="card">
+            <h3 class="work-title">Overview</h3>
+            <p class="work-description">
+              ParkEasy is a smart parking marketplace built for Luxembourg and other European cities. It combines a private parking marketplace with an AI-powered
+              public parking detection system to reduce congestion, save time, and improve urban mobility.
+            </p>
+
+            <h3 class="work-title">Objectives</h3>
+            <p class="work-description">
+              • Build a hybrid platform for public + private parking management.<br />
+              • Use YOLOv8 + OpenCV to detect free spots from camera feeds.<br />
+              • Deliver a Node.js backend + React frontend with real-time updates.<br />
+              • Deploy on DigitalOcean Kubernetes with monitoring and autoscaling.
+            </p>
+
+            <h3 class="work-title">Problem Statement</h3>
+            <p class="work-description">
+              Current parking apps focus on payments or static reservations. There is no unified system that combines AI-based live detection of public availability
+              with peer-to-peer private parking listings. ParkEasy bridges that gap.
+            </p>
+
+            <h3 class="work-title">Architecture</h3>
+            <p class="work-description">
+              Dual-system design: Smart Detection (AI pods + APIs) and Marketplace (accounts, listings, bookings, payments) connected through a Kubernetes cluster.
+            </p>
+            <img src="../assets/img/projects/parkeasy-clopr1-project.png" alt="ParkEasy architecture diagram" class="work-img project-arch" />
+
+            <h3 class="work-title">Tech Stack</h3>
+            <p class="work-description">
+              <b>Detection:</b> Python, YOLOv8, OpenCV<br />
+              <b>Backend:</b> Node.js (Fastify/Express), WebSockets<br />
+              <b>Frontend:</b> React (Vite/CRA)<br />
+              <b>Data:</b> PostgreSQL, optional Redis/RabbitMQ<br />
+              <b>Cloud:</b> DigitalOcean DOKS + Managed PostgreSQL<br />
+              <b>Observability:</b> Prometheus + Grafana
+            </p>
+
+            <h3 class="work-title">Kubernetes Design</h3>
+            <p class="work-description">
+              Detector pods run per camera feed and scale with HPA. Backend API, frontend, broker, and monitoring each run in dedicated deployments behind an Ingress
+              controller. ConfigMaps and Secrets manage keys and camera configs.
+            </p>
+
+            <h3 class="work-title">AI Detection Workflow</h3>
+            <p class="work-description">
+              1) Capture camera frames → 2) YOLOv8 detects vehicles → 3) Occupancy computed by polygon overlap → 4) Detector pod sends results → 5) Backend updates DB
+              → 6) Frontend shows real-time availability.
+            </p>
+
+            <h3 class="work-title">Marketplace Workflow</h3>
+            <p class="work-description">
+              Owners list spaces with pricing and schedules. Drivers search by time/location, reserve, and pay. Availability updates in real time and usage analytics
+              are generated for owners.
+            </p>
+
+            <h3 class="work-title">Monitoring & Observability</h3>
+            <p class="work-description">
+              Prometheus collects CPU/memory, API latency, active users, and detection accuracy. Grafana dashboards visualize uptime, camera performance, occupancy
+              rates by zone, and booking metrics.
+            </p>
+
+            <h3 class="work-title">Deliverables</h3>
+            <p class="work-description">
+              • Kubernetes manifests (YAML)<br />
+              • Source code (GitHub repository)<br />
+              • Grafana dashboard screenshots<br />
+              • 500-word reflection (co-authored with Kim Nguyen)<br />
+              • PDF project report and presentation assets
+            </p>
+
+            <h3 class="work-title">Links</h3>
+            <a href="https://github.com/Aris-Kata26/parkeasy" target="_blank" rel="noopener noreferrer" class="link">GitHub Repo <i class="ri-arrow-right-line link-icon"></i></a>
+            <a href="../assets/pdf/reports/Parkeasy-reflection.pdf" target="_blank" rel="noopener noreferrer" class="link">Reflection Report (Co-authored with Kim Nguyen) <i class="ri-arrow-right-line link-icon"></i></a>
+            <a href="../index.html#works" class="link"><i class="ri-arrow-left-line"></i> Back to Portfolio</a>
+            <a href="../index.html#works" class="btn">← Back to Projects</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../assets/js/mixitup.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
