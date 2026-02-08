@@ -545,6 +545,7 @@ button:focus-visible,
 
 .home-img-wrapper {
   width: clamp(18rem, 10rem + 28vw, 34rem);
+  position: relative;
   border-radius: 0 0 100vw 100vw;
   overflow: hidden;
 }
@@ -648,62 +649,6 @@ button:focus-visible,
   column-gap: 4.5rem;
 }
 
-/*=============== SCROLL REVEAL ANIMATIONS ===============*/
-:root {
-  --reveal-duration: 0.75s;
-  --reveal-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.reveal {
-  opacity: 1;
-  transform: none;
-  filter: none;
-}
-
-.reveal-ready .reveal {
-  opacity: 0;
-  transform: translate3d(0, 12px, 0);
-  filter: blur(4px);
-  transition: opacity var(--reveal-duration) var(--reveal-ease),
-    transform var(--reveal-duration) var(--reveal-ease),
-    filter var(--reveal-duration) var(--reveal-ease);
-  transition-delay: var(--d, 0ms);
-  will-change: opacity, transform, filter;
-}
-
-.reveal-ready .reveal.reveal--left {
-  transform: translate3d(-16px, 0, 0);
-}
-
-.reveal-ready .reveal.reveal--right {
-  transform: translate3d(16px, 0, 0);
-}
-
-.reveal-ready .reveal.reveal--scale {
-  transform: scale(0.96);
-}
-
-.reveal-ready .reveal.reveal--instant,
-.reveal-ready .reveal.is-visible {
-  opacity: 1;
-  transform: none;
-  filter: blur(0);
-}
-
-.reveal-ready .reveal.reveal--instant {
-  transition: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-ready .reveal,
-  .reveal-ready .reveal.is-visible {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-    transition: none !important;
-  }
-}
-
 /* CV dropdown */
 .btn-dropdown {
   position: relative;
@@ -772,6 +717,24 @@ button:focus-visible,
   background-color: var(--border-color);
 }
 
+/*=============== WOW REVEAL ===============*/
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.reveal--instant {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*=============== SERVICES ===============*/
 .card {
   background-color: var(--container-color);
@@ -779,6 +742,7 @@ button:focus-visible,
   border-radius: 1.25rem;
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s var(--transition), box-shadow 0.4s var(--transition);
 }
 
 .card::before {
@@ -790,6 +754,11 @@ button:focus-visible,
   height: 120px;
   background-image: url(../img//shape-3.png);
   background-size: cover;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .services-subtitle {
@@ -835,6 +804,18 @@ button:focus-visible,
   margin-right: 1.25rem !important;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .card {
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .swiper-pagination-bullet-active {
   background-color: var(--first-color);
   transform: scale(1.7);
@@ -871,10 +852,34 @@ button:focus-visible,
   color: var(--first-color);
 }
 
+/* Professional Skills: make % values match accent color */
+#skills .skills-value,
+#skills .skills-number,
+#skills .skills-percent {
+  color: var(--first-color);
+  font-weight: 700;
+}
+
+/* Skills: keep number and % on the same line */
 #skills .skills-percent-wrap {
   display: inline-flex;
   align-items: baseline;
+  white-space: nowrap;
   gap: 0;
+}
+
+#skills .skills-number,
+#skills .skills-percent {
+  display: inline;
+  line-height: 1;
+  color: var(--first-color);
+  font-weight: 700;
+}
+
+/* Safety: if any old <b>%</b> remains, keep it inline + colored */
+#skills .skills-value b {
+  display: inline;
+  color: var(--first-color);
 }
 
 .skills-description {
@@ -1069,58 +1074,6 @@ button:focus-visible,
   box-shadow: 4px 4px var(--shadow-color);
 }
 
-.project-page .card.project-details-card {
-  max-width: 900px;
-  margin-inline: auto;
-  padding: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.project-page .project-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.project-page .project-section-title {
-  font-size: var(--h3-font-size);
-  margin: 0;
-  color: var(--title-color);
-}
-
-.project-page .project-text {
-  margin: 0;
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
-.project-page .project-list {
-  margin: 0;
-  padding-left: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  color: var(--text-color);
-}
-
-.project-page .project-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  align-items: center;
-}
-
-.project-page .project-links .link,
-.project-page .project-links .btn {
-  margin: 0;
-}
-
-.project-page .work-description {
-  min-height: 0;
-}
-
 /*=============== RESUME ===============*/
 .resume-container {
   grid-template-columns: repeat(2, 1fr);
@@ -1232,13 +1185,6 @@ button:focus-visible,
   margin-block: 2rem 0.25rem;
 }
 
-/* Tutor photo: show full image (no crop) */
-#testimonials img.testimonial-photo--contain {
-  object-fit: contain !important;
-  object-position: center;
-  background: var(--container-color);
-}
-
 #testimonials .swiper-slide.card {
   position: relative;
   display: grid;
@@ -1280,6 +1226,87 @@ button:focus-visible,
 
 #testimonials .testimonial-feedback {
   margin-bottom: 2.5rem;
+}
+
+#testimonials .testimonial-socialproof {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+}
+
+#testimonials .socialproof-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+#testimonials .socialproof-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+#testimonials .socialproof-grid {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+#testimonials .socialproof-carousel {
+  overflow: hidden;
+}
+
+#testimonials .socialproof-card {
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  background: var(--container-color);
+  box-shadow: 4px 4px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 0 0 calc(50% - 0.75rem);
+}
+
+#testimonials .socialproof-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
+#testimonials .socialproof-tag {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: hsla(var(--hue), 70%, 45%, 0.12);
+  color: hsl(var(--hue), 70%, 45%);
+  font-weight: var(--font-bold);
+}
+
+#testimonials .socialproof-title {
+  font-size: var(--h3-font-size);
+  margin: 0;
+}
+
+#testimonials .socialproof-text {
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+#testimonials .socialproof-img {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  object-fit: cover;
+  box-shadow: 2px 2px var(--shadow-color);
+  cursor: zoom-in;
+  aspect-ratio: 16 / 9;
 }
 
 #testimonials .feedback-title {
@@ -1367,37 +1394,25 @@ button:focus-visible,
 #testimonials .testimonial-portrait {
   grid-column: 2;
   width: clamp(180px, 24vw, 240px);
+  aspect-ratio: 11 / 13;
   border-radius: 1.25rem;
   border: 1px solid var(--border-color);
   box-shadow: 4px 4px var(--shadow-color);
   object-fit: cover;
+  object-position: center top;
   justify-self: start;
   margin-bottom: 1rem;
 }
 
+/* Some testimonial images (e.g., tutor portrait) should not be cropped */
+#testimonials .testimonial-photo--contain {
+  object-fit: contain;
+  object-position: center top;
+  background-color: var(--container-color);
+}
+
 #testimonials .testimonial-name {
   margin-block: 1.25rem 0.25rem;
-}
-
-/* ===== HERO LOAD ANIMATION (SAFE, NO LAYOUT CHANGES) ===== */
-.hero-animate {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: opacity, transform;
-}
-
-.page-loaded .hero-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-animate {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1420,6 +1435,19 @@ button:focus-visible,
 
   #testimonials .testimonial-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  #testimonials .testimonial-socialproof {
+    padding: 1.5rem;
+  }
+
+  #testimonials .socialproof-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #testimonials .socialproof-card {
+    flex: 0 0 100%;
   }
 }
 
@@ -1882,6 +1910,10 @@ button:focus-visible,
     transform: scale(0.7);
   }
 
+  .home-img-wrapper {
+    width: clamp(16rem, 48vw, 26rem);
+  }
+
   .services-swiper,
   .testimonials-swiper {
     max-width: 420px;
@@ -1910,16 +1942,47 @@ button:focus-visible,
     grid-template-columns: fit-content(420px);
   }
 
-  /* Prevent overlap of hero stats on narrow screens */
+  /* Keep hero stats attached to the photo (two pills, smaller, close together) */
+  .home-banner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.85rem;
+  }
+
+  .home-img-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
   .home-data {
     position: static;
-    width: min(320px, 90vw);
-    margin: 1rem auto 0;
+    width: min(210px, 46vw);
+    height: 70px;
+    padding-inline: 1rem;
+    margin: 0;
     transform: none;
   }
 
-  .home-data + .home-data {
-    margin-top: 0.75rem;
+  .home-data-one {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .home-data-two {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .home-data-no {
+    font-size: 1.85rem;
+  }
+
+  .home-data-title {
+    font-size: var(--small-font-size);
   }
 
   .footer-container {
@@ -1945,8 +2008,13 @@ button:focus-visible,
     left: 56px;
   }
 
+  .home-img-wrapper {
+    width: clamp(15rem, 64vw, 22rem);
+  }
+
   .home-data {
-    transform: scale(0.6);
+    width: min(200px, 44vw);
+    height: 66px;
   }
 
   .skills-container {
@@ -1964,13 +2032,26 @@ button:focus-visible,
     left: 40px;
   }
 
-  .home-banner,
   .home-img-wrapper {
-    width: 100%;
+    width: clamp(14rem, 70vw, 20rem);
+  }
+
+  .home-banner {
+    grid-template-columns: 1fr;
+    row-gap: 0.65rem;
   }
 
   .home-data {
-    transform: scale(0.5);
+    width: min(280px, 88vw);
+  }
+
+  .home-data-one,
+  .home-data-two {
+    grid-column: 1;
+  }
+
+  .home-data-two {
+    grid-row: 3;
   }
 
   .card {
@@ -2292,7 +2373,8 @@ button:focus-visible,
   }
 
   #about .evidence-map{
-    padding-right:3rem;
+    grid-column: span 2;
+    padding:2rem 3rem 2.5rem;
   }
 
   #about .about-evidence-intro{
@@ -2338,13 +2420,60 @@ button:focus-visible,
     white-space:nowrap;
   }
 
+  #about .evidence-checklist{
+    margin-top:2rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--border-color);
+  }
+
+  #about .evidence-checklist-title{
+    font-size:var(--h3-font-size);
+    margin-bottom:0.35rem;
+  }
+
+  #about .evidence-checklist-intro{
+    font-size:var(--small-font-size);
+    color:var(--text-color);
+    margin-bottom:1rem;
+  }
+
+  #about .evidence-checklist-list{
+    display:grid;
+    gap:0.75rem;
+    list-style:none;
+    padding-left:0;
+    margin:0;
+  }
+
+  #about .evidence-checklist-item{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:0.75rem 1rem;
+    padding:0.75rem 1rem;
+    border-radius:0.85rem;
+    background:var(--body-color);
+    border:1px solid var(--border-color);
+  }
+
+  #about .evidence-checklist-text{
+    font-weight:var(--font-medium);
+    color:var(--title-color);
+  }
+
   @media screen and (max-width: 768px){
     #about .evidence-map{
-      padding-right:1.5rem;
+      grid-column:auto;
+      padding:1.5rem;
     }
 
     #about .evidence-map-row{
       grid-template-columns:1fr;
+    }
+
+    #about .evidence-checklist-item{
+      grid-template-columns:1fr;
+      justify-items:start;
     }
   }
 

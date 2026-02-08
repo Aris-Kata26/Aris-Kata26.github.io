@@ -1,38 +1,82 @@
-<h1 align="center">Hi 👋, I'm Aristide</h1>
-<h3 align="center">A passionate Cloud Computing Student from Luxembourg</h3>
+<h1 align="center">Hi 👋, I'm Aristide Katagaruka</h1>
+<h3 align="center">Cloud Computing Student (Luxembourg) • AWS / Azure / GCP • IaC • DevOps</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=aris-kata26&label=Profile%20views&color=0e75b6&style=flat" alt="aris-kata26" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=aris-kata26" alt="aris-kata26" /></a> </p>
-
-- 🔭 I’m currently working on **Terraform & Python Automation**
-
-- 🌱 I’m currently learning **Azure**
-
-- 👯 I’m looking to collaborate on **Cloud native projects**
-
-- 🤝 I’m looking for help with **Cloud Computing**
-
-- 👨‍💻 All of my projects are available at [comingsoon.lu](comingsoon.lu)
-
-- 📝 I regularly write articles on [Cloud Computing](Cloud Computing)
-
-- 💬 Ask me about **Cloud Computing**
-
-- 📫 How to reach me **katar711@school.lu**
-
-- 📄 Know about my experiences [file:///C:/Users/akata/OneDrive%20-%20365education/BTS/All%20courses/TENG/Aristide_Katagaruka_CV.pdf](file:///C:/Users/akata/OneDrive%20-%20365education/BTS/All%20courses/TENG/Aristide_Katagaruka_CV.pdf)
-
-- ⚡ Fun fact **I create fitness content on insta @aris__calisthenics**
-
-<h3 align="left">Connect with me:</h3>
 <p align="left">
+  <img src="https://komarev.com/ghpvc/?username=aris-kata26&label=Profile%20views&color=0e75b6&style=flat" alt="aris-kata26" />
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://azure.microsoft.com/en-in/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="azure" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://canvasjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/Hardik0307/Hardik0307/master/assets/canvasjs-charts.svg" alt="canvasjs" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.vagrantup.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/vagrantup/vagrantup-icon.svg" alt="vagrant" width="40" height="40"/> </a> </p>
+<p align="left">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=aris-kata26&margin-w=10&margin-h=10" alt="aris-kata26" />
+  </a>
+</p>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=aris-kata26&show_icons=true&locale=en&layout=compact" alt="aris-kata26" /></p>
+### 🚀 What I'm working on
+- **Cloud labs & architecture** across **AWS / Azure / GCP**
+- **Infrastructure as Code** with **Terraform** + **Ansible**
+- **Kubernetes & containerization** (labs + project prototypes)
+- Building a portfolio with **evidence-first documentation** (PDFs, diagrams, reports)
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=aris-kata26&show_icons=true&locale=en" alt="aris-kata26" /></p>
+### 🌱 Currently learning
+- Azure admin skills (**AZ-104 track**)
+- Better automation workflows (CI/CD + scripting)
 
+### 🧩 Collaboration
+- Open to collaborating on **cloud-native projects**, **IaC**, and **automation tooling**
+- Always happy to exchange ideas with other students and builders
+
+### 🌐 Portfolio (Live)
+👉 **https://aris-kata26.github.io/**
+
+### 📫 Contact
+- Email: **katar711@school.lu**
+- GitHub: **https://github.com/Aris-Kata26**
+- LinkedIn: **https://www.linkedin.com/in/aristide-kata**
+
+### ⚡ Fun fact
+I also create fitness content: **@aris__calisthenics**
+
+---
+
+<h3 align="left">🛠️ Languages & Tools</h3>
+
+<p align="left">
+  <a href="https://aws.amazon.com" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/>
+  </a>
+  <a href="https://azure.microsoft.com" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="azure" width="40" height="40"/>
+  </a>
+  <a href="https://cloud.google.com/" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/>
+  </a>
+  <a href="https://www.terraform.io/" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="terraform" width="40" height="40"/>
+  </a>
+  <a href="https://www.ansible.com/" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="ansible" width="40" height="40"/>
+  </a>
+  <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/>
+  </a>
+  <a href="https://kubernetes.io" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/>
+  </a>
+  <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+  </a>
+  <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/>
+  </a>
+  <a href="https://www.python.org" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/>
+  </a>
+</p>
+
+<p>
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=aris-kata26&show_icons=true&locale=en&layout=compact" alt="aris-kata26" />
+</p>
+
+<p>&nbsp;
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=aris-kata26&show_icons=true&locale=en" alt="aris-kata26" />
+</p>
