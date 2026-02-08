@@ -1313,12 +1313,21 @@ button:focus-visible,
 #testimonials .testimonial-portrait {
   grid-column: 2;
   width: clamp(180px, 24vw, 240px);
+  aspect-ratio: 11 / 13;
   border-radius: 1.25rem;
   border: 1px solid var(--border-color);
   box-shadow: 4px 4px var(--shadow-color);
   object-fit: cover;
+  object-position: center top;
   justify-self: start;
   margin-bottom: 1rem;
+}
+
+/* Some testimonial images (e.g., tutor portrait) should not be cropped */
+#testimonials .testimonial-photo--contain {
+  object-fit: contain;
+  object-position: center top;
+  background-color: var(--container-color);
 }
 
 #testimonials .testimonial-name {
