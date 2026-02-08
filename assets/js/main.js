@@ -483,3 +483,35 @@ document.querySelectorAll('img.work-img').forEach((img) => {
     img.setAttribute('aria-hidden', 'true');
   });
 })();
+
+/*=============== SCROLL REVEAL ===============*/
+(function initReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    items.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+  );
+
+  items.forEach((el) => {
+    if (el.classList.contains('reveal--instant')) {
+      el.classList.add('is-visible');
+      return;
+    }
+    observer.observe(el);
+  });
+})();

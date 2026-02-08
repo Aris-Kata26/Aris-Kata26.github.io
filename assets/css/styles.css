@@ -716,6 +716,24 @@ button:focus-visible,
   background-color: var(--border-color);
 }
 
+/*=============== WOW REVEAL ===============*/
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.reveal--instant {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*=============== SERVICES ===============*/
 .card {
   background-color: var(--container-color);
@@ -723,6 +741,7 @@ button:focus-visible,
   border-radius: 1.25rem;
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s var(--transition), box-shadow 0.4s var(--transition);
 }
 
 .card::before {
@@ -734,6 +753,11 @@ button:focus-visible,
   height: 120px;
   background-image: url(../img//shape-3.png);
   background-size: cover;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .services-subtitle {
@@ -777,6 +801,18 @@ button:focus-visible,
 
 .swiper-pagination-bullet:not(:last-child) {
   margin-right: 1.25rem !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .card {
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .swiper-pagination-bullet-active {
