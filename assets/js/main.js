@@ -396,7 +396,7 @@ document.querySelectorAll('.mix.courses .card').forEach((card) => {
   };
 
   // Click on any portfolio image
-  document.querySelectorAll('.work-img').forEach((img) => {
+  document.querySelectorAll('.work-img, .socialproof-img').forEach((img) => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', (e) => {
       e.preventDefault();
@@ -426,6 +426,63 @@ document.querySelectorAll('img.work-img').forEach((img) => {
   if (!img.hasAttribute('width')) img.setAttribute('width', '400');
   if (!img.hasAttribute('height')) img.setAttribute('height', '240');
 });
+
+document.querySelectorAll('img.socialproof-img').forEach((img) => {
+  if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+  if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+  if (!img.hasAttribute('width')) img.setAttribute('width', '520');
+  if (!img.hasAttribute('height')) img.setAttribute('height', '320');
+});
+
+/*=============== SOCIAL PROOF CAROUSEL ===============*/
+(function enableSocialProofCarousel() {
+  const carousel = document.querySelector('.socialproof-carousel');
+  const track = carousel?.querySelector('.socialproof-grid');
+  if (!carousel || !track) return;
+
+  const cards = Array.from(track.querySelectorAll('.socialproof-card'));
+  if (cards.length <= 2) return;
+
+  let slideIndex = 0;
+  let intervalId = null;
+
+  const getSlidesPerView = () => (window.matchMedia('(max-width: 576px)').matches ? 1 : 2);
+
+  const updatePosition = () => {
+    const slidesPerView = getSlidesPerView();
+    const totalSlides = Math.ceil(cards.length / slidesPerView);
+    if (slideIndex >= totalSlides) slideIndex = 0;
+    const shift = slideIndex * carousel.clientWidth;
+    track.style.transform = `translateX(-${shift}px)`;
+  };
+
+  const start = () => {
+    if (intervalId) return;
+    intervalId = setInterval(() => {
+      const slidesPerView = getSlidesPerView();
+      const totalSlides = Math.ceil(cards.length / slidesPerView);
+      slideIndex = (slideIndex + 1) % totalSlides;
+      updatePosition();
+    }, 2000);
+  };
+
+  const stop = () => {
+    if (!intervalId) return;
+    clearInterval(intervalId);
+    intervalId = null;
+  };
+
+  window.addEventListener('resize', () => {
+    slideIndex = 0;
+    updatePosition();
+  });
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+
+  updatePosition();
+  start();
+})();
 
 /*=============== CV DROPDOWNS ===============*/
 (function cvDropdowns() {
