@@ -545,6 +545,7 @@ button:focus-visible,
 
 .home-img-wrapper {
   width: clamp(18rem, 10rem + 28vw, 34rem);
+  position: relative;
   border-radius: 0 0 100vw 100vw;
   overflow: hidden;
 }
@@ -1806,6 +1807,10 @@ button:focus-visible,
     transform: scale(0.7);
   }
 
+  .home-img-wrapper {
+    width: clamp(16rem, 48vw, 26rem);
+  }
+
   .services-swiper,
   .testimonials-swiper {
     max-width: 420px;
@@ -1834,16 +1839,47 @@ button:focus-visible,
     grid-template-columns: fit-content(420px);
   }
 
-  /* Prevent overlap of hero stats on narrow screens */
+  /* Keep hero stats attached to the photo (two pills, smaller, close together) */
+  .home-banner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.85rem;
+  }
+
+  .home-img-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
   .home-data {
     position: static;
-    width: min(320px, 90vw);
-    margin: 1rem auto 0;
+    width: min(210px, 46vw);
+    height: 70px;
+    padding-inline: 1rem;
+    margin: 0;
     transform: none;
   }
 
-  .home-data + .home-data {
-    margin-top: 0.75rem;
+  .home-data-one {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .home-data-two {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .home-data-no {
+    font-size: 1.85rem;
+  }
+
+  .home-data-title {
+    font-size: var(--small-font-size);
   }
 
   .footer-container {
@@ -1869,8 +1905,13 @@ button:focus-visible,
     left: 56px;
   }
 
+  .home-img-wrapper {
+    width: clamp(15rem, 64vw, 22rem);
+  }
+
   .home-data {
-    transform: scale(0.6);
+    width: min(200px, 44vw);
+    height: 66px;
   }
 
   .skills-container {
@@ -1888,13 +1929,26 @@ button:focus-visible,
     left: 40px;
   }
 
-  .home-banner,
   .home-img-wrapper {
-    width: 100%;
+    width: clamp(14rem, 70vw, 20rem);
+  }
+
+  .home-banner {
+    grid-template-columns: 1fr;
+    row-gap: 0.65rem;
   }
 
   .home-data {
-    transform: scale(0.5);
+    width: min(280px, 88vw);
+  }
+
+  .home-data-one,
+  .home-data-two {
+    grid-column: 1;
+  }
+
+  .home-data-two {
+    grid-row: 3;
   }
 
   .card {
