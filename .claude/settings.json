@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\akata\\\\Documents\\\\Projects\\\\mywebsite-portfolio1\\\\Aristide-s_Profile.github.io\" -Force)"
+    ]
+  }
+}
